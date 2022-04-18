@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Информация о заметке</title>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+</head>
+<body>
+<main class="container">
+    <nav style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px">
+        <ul>
+            <li><a href="/" role="button"> Вернуться на главную </a></li>
+            <li><a href="/tag/{{note.id}}" role="button">Добавить Тег</a></li>
+        </ul>
+    </nav>
+    <h1>{{note.name}}</h1>
+    <p>Описание: <b>{{note.description}}</b></p>
+    <p>Время создания: <kbd>{{note.created.date()}}</kbd></p>
+    {% if note.done %}
+    <p>Статус:
+        <ins>Выполнена</ins>
+    </p>
+    {% else %}
+    <p>Статус: <i>Не выполнена</i></p>
+    {% endif %}
+    <p>Tags: <small>{{ note.tags|join(', ')}}</small></p>
+</main>
+</body>
+</html>

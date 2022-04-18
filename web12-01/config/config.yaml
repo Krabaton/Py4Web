@@ -1,0 +1,4 @@
+common:
+  port: 3000
+postgres:
+  database_url: postgres://postgres:567234@localhost/web12
