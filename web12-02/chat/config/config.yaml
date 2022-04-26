@@ -1,0 +1,6 @@
+common:
+  port: 3000
+  appid: 12345
+postgres:
+  database_url: postgres://postgres:567234@localhost/web122
+  require_ssl: true

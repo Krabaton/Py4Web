@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+aiohttp = "*"
+pyyaml = "*"
+jinja2 = "*"
+aiohttp-jinja2 = "*"
+gino = "*"
+aiohttp-session = {extras = ["secure"], version = "*"}
+alembic = "*"
+cryptography = "*"
+psycopg2 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
