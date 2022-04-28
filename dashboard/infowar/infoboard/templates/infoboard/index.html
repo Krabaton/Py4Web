@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "infoboard/base.html" %}
+{% block content %}
+
+<div class="container">
+    <p class="d-flex flex-column align-items-center justify-content-center bg-secondary" style="height: 55px">
+        Welcome to our dashboard
+    </p>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Назва</th>
+      <th scope="col">Опис</th>
+      <th scope="col">Створена</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for result in results %}
+    <tr>
+      <th scope="row">{{result.id}}</th>
+      <td>{{result.name}}</td>
+      <td>{{result.description}}</td>
+      <td>{{result.created_at|date:'Y-m-d H:i'}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% endblock %}
