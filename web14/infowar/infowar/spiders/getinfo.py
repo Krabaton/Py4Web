@@ -23,14 +23,12 @@ class GetinfoSpider(scrapy.Spider):
             element_dict.update({'date': date})
             losses = element.xpath('div[@class="casualties"]/div/ul/li')
             for l in losses:
-                field = l.xpath('text()').extract()
-                abbr = l.xpath('abbr/text()').get()
-                field = ' '.join(field)
-                if abbr:
-                    field = abbr + ' ' + field
-
+                f = l.css('*::text').extract()
+                field = ' '.join(f)
                 name, count = field.split('—')
                 name = re.sub('\xa0', '', name)
+                name = re.sub('  ', ' ', name)
+                name = name.strip()
                 count = re.search(r'\d+', count).group()
                 element_dict.update(({name: int(count)}))
             yield element_dict
