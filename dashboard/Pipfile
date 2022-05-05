@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
+requests = "*"
+beautifulsoup4 = "*"
+python-dateutil = "*"
+pymongo = {extras = ["srv", "tls"], version = "*"}
 
 [dev-packages]
 

@@ -9,7 +9,7 @@ class TypeLosses(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.id}: {self.name} - {self.description}'
+        return f'{self.name}'
 
 
 class Losses(models.Model):
@@ -19,4 +19,4 @@ class Losses(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.id}: {self.lose_name} - {self.total}'
+        return f'{self.lose_name}'
