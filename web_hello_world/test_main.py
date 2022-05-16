@@ -1,0 +1,16 @@
+from fastapi.testclient import TestClient
+from main import app
+
+client = TestClient(app)
+
+
+def test_index():
+    response = client.get('/')
+    assert response.status_code == 200
+    assert response.json() == {"message": "Hello World"}
+
+
+def test_help():
+    response = client.get('/help')
+    assert response.status_code == 200
+    assert response.json() == {"message": "Help!"}

@@ -14,6 +14,7 @@ bcrypt = "*"
 python-jose = "*"
 python-multipart = "*"
 passlib = "*"
+jinja2 = "*"
 
 [dev-packages]
 
